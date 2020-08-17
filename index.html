@@ -1,0 +1,280 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="control.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title> Javacard helper </title>
+  </head>
+
+  <body>
+    <div>
+      <div class="drop-down-panel initially-closed">
+        <div>
+          <p> Constants </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div class="flexable">
+                    <fieldset>
+                      <legend> Quantities </legend>
+                      <div class="constant-panel">
+                        <div class="one-element-wrapper">
+                          <input placeholder="Name">
+                        </div>
+                        <div class="one-element-wrapper">
+                          <input placeholder="Value">
+                        </div>
+
+                        <button class="add-constant-button"> Add </button>
+                        <button class="reset-constant-button"> Reset </button>
+                        <table id="quantities-table">
+                          <thead>
+                            <tr>
+                              <th> Name </th>
+                              <th> Value </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend> Instruction bytes </legend>
+                      <div class="constant-panel">
+                        <div class="one-element-wrapper">
+                          <input placeholder="Name">
+                        </div>
+                        <div class="one-element-wrapper">
+                          <input placeholder="Value">
+                        </div>
+                        <button class="add-constant-button"> Add </button>
+                        <button class="reset-constant-button"> Reset </button>
+
+                        <table id="instruction-bytes-table">
+                          <thead>
+                            <tr>
+                              <th> Name </th>
+                              <th> Value </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <legend> Error codes </legend>
+                      <div class="constant-panel">
+                        <div class="one-element-wrapper">
+                          <input placeholder="Name">
+                        </div>
+                        <div class="one-element-wrapper">
+                          <input placeholder="Value">
+                        </div>
+                        <button class="add-constant-button"> Add </button>
+                        <button class="reset-constant-button"> Reset </button>
+                        <table id="error-codes-table">
+                          <thead>
+                            <tr>
+                              <th> Name </th>
+                              <th> Value </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="one-element-wrapper input-area">
+                    <input class="error-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drop-down-panel initially-closed">
+        <div>
+          <p> Conversions </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              <div class="flexable">
+                <div>
+                  <fieldset>
+                    <legend> Decimal </legend>
+                    <div class="input-plus input-area">
+                      <input id="decimal-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend> Decimal bytes </legend>
+                    <div class="input-plus input-area">
+                      <input id="decimal-bytes-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                </div>
+                <div>
+                  <fieldset>
+                    <legend> Hexadecimal </legend>
+                    <div class="input-plus input-area">
+                      <input id="hexadecimal-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend> Hexadecimal bytes </legend>
+                    <div class="input-plus input-area">
+                      <input id="hexadecimal-bytes-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                </div>
+                <div>
+                  <fieldset>
+                    <legend> Binary </legend>
+                    <div class="input-plus input-area">
+                      <input id="binary-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend> Binary bytes </legend>
+                    <div class="input-plus input-area">
+                      <input id="binary-bytes-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="one-element-wrapper input-area">
+                <input class="error-input">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drop-down-panel">
+        <div>
+          <p> Create command </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              <div class="flexable">
+                <fieldset>
+                  <legend> Instruction </legend>
+                  <div class="one-element-wrapper input-area">
+                    <select id="instruction-byte-select">
+                    </select>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend> Lc </legend>
+                  <div>
+                    <div class="input-area">
+                      <label for="lc-present"> Present </label>
+                      <input type="checkbox" class="initially-checked" id="lc-present" checked>
+                      <label for="lc-for-value"> For value </label>
+                      <input type="checkbox" class="initially-checked" id="lc-for-value" checked>
+                      <span class="checkmark"></span>
+                    </div>
+                    <div class="input-plus input-area">
+                      <input id="lc-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend> Le </legend>
+                  <div>
+                    <div class="input-area">
+                      <label for="le-present"> Present </label>
+                      <input type="checkbox" class="initially-unchecked" id="le-present">
+                      <label for="le-for-value"> For value </label>
+                      <input type="checkbox" class="initially-unchecked" id="le-for-value">
+                      <span class="checkmark"></span>
+                    </div>
+                    <div class="input-plus input-area">
+                      <input id="le-input">
+                      <button class="copy-button"> Copy </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="input-plus input-area">
+                <input id="created-command-input">
+                <button class="copy-button"> Copy </button>
+              </div>
+              <div class="one-element-wrapper input-area">
+                <input class="error-input">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drop-down-panel">
+        <div>
+          <p> Sample device command analyzer </p>
+        </div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <fieldset>
+                  <legend> Sample device command </legend>
+
+                  <div class="flexable input-area">
+                    <input id="sd-command-input">
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend> Result </legend>
+                  <div class="command-analyzer-div">
+                    <div>
+                      <label class="block-label"> Instruction </label>
+                      <label class="block-label"> Lc </label>
+                      <label class="block-label"> Le </label>
+                      <label class="block-label"> Status </label>
+                    </div>
+                    <div>
+                      <div class="flexable paragraph-wrapper">
+                        <p id="sd-command-instruction-paragraph"> </p>
+                      </div>
+                      <div class="flexable paragraph-wrapper">
+                        <p id="sd-command-lc-paragraph"> </p>
+                      </div>
+                      <div class="flexable paragraph-wrapper">
+                        <p id="sd-command-le-paragraph"> </p>
+                      </div>
+                      <div class="flexable paragraph-wrapper">
+                        <p id="sd-command-status-paragraph"> </p>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
